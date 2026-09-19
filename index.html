@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -180,7 +180,7 @@
   <li><a href="#projects">Projects</a></li>
   <li><a href="#contact">Contact Me</a></li>
   </ul>
-    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">◐</button>
+   
   </div>
 </nav>
 
@@ -259,7 +259,7 @@
       </div>
 
       <div class="t-item">
-        <div class="t-date">May — Jul 2025</div>
+        <div class="t-date">May 2025 — Jul 2025</div>
         <div class="t-title">Reduced Order Modelling of Acoustic Response of a Combustor</div>
         <div class="t-meta">Research Internship · Thermal Physics Laboratory, Kyoto University</div>
         <div class="t-guide">Guide: Prof. Kurose Ryoichi</div>
@@ -286,7 +286,7 @@
       </div>
 
       <div class="t-item">
-        <div class="t-date">May — Jul 2024</div>
+        <div class="t-date">May 2024 — Jul 2024</div>
         <div class="t-title">Modelling of the Lifted Temperature Minimum Phenomenon</div>
         <div class="t-meta">Research Internship · Fluid Mechanics Laboratory, JNCASR</div>
         <div class="t-guide">Guide: Prof. K.R. Sreenivas</div>
@@ -375,17 +375,6 @@
   <p>ae22b003@smail.iitm.ac.in · <a href="https://www.linkedin.com/in/xxxxxxxxxx" target="_blank" rel="noopener">LinkedIn</a></p>
   <p>Indian Institute of Technology Madras</p>
 </footer>
-
-<script>
-  const btn = document.getElementById('themeToggle');
-  const root = document.documentElement;
-  const stored = null; // no persistence across sessions by design here
-  btn.addEventListener('click', () => {
-    const current = root.getAttribute('data-theme');
-    if(current === 'dark'){ root.setAttribute('data-theme','light'); btn.textContent = '◐'; }
-    else{ root.setAttribute('data-theme','dark'); btn.textContent='◑'; }
-  });
-</script>
 
 </body>
 </html>
