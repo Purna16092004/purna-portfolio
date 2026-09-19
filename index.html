@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Purna Ananthkrishnan — Aerospace Research</title>
+<title>Purna Ananthkrishnan</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -20,6 +20,7 @@
     --sans: "IBM Plex Sans", -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
     --mono: "IBM Plex Mono", "SF Mono", Consolas, monospace;
   }
+  .sec-text{ font-size: 1rem; color: var(--ink); max-width: 640px; }
   @media (prefers-color-scheme: dark){
     :root:not([data-theme="light"]){
       --bg: #10141B;
@@ -77,7 +78,7 @@
   .theme-toggle:hover{ color: var(--accent); border-color: var(--accent); }
 
   /* ---------- Hero ---------- */
-  .hero{ position: relative; padding: 40px 0 40px; overflow: hidden; }
+  .hero{ position: relative; padding: 40px 0 70px;}
   .hero-lines{ position:absolute; top: 0; right: -60px; width: 420px; opacity: 0.55; pointer-events:none; }
   .hero-lines svg{ width:100%; height:auto; }
   .hero-lines path, .hero-lines line{ stroke: var(--accent-2); }
@@ -198,6 +199,16 @@
     </div>
   </div>
 </header>
+
+<section id="interests">
+    <div class="section-head"><span class="section-num">01</span><h2>Research Interests</h2></div>
+    <p class="sec-text">My research interests lie in computational fluid dynamics, experimental high-speed aerodynamics, fluid mechanics, turbulence and flow instabilities, and nonlinear dynamics. I am particularly interested in understanding complex flow phenomena through a combination of high-fidelity computational methods, experiments, and reduced-order modelling.</p>
+  </section>
+
+  <section id="overview">
+    <div class="section-head"><span class="section-num">02</span><h2>Overview</h2></div>
+    <p class="sec-text">I am a final-year Dual Degree student in Aerospace Engineering at IIT Madras, with research interests spanning experimental high-speed aerodynamics, computational methods, and theoretical fluid mechanics. At the Gas Dynamics Laboratory, IIT Madras, I have worked on shock–cavity interactions and shock wave–boundary layer interactions, alongside theoretical work using the method of characteristics to study expansion wave interactions. During my research internship at Kyoto University, I investigated combustor acoustics and developed a Green's-function-based reduced-order model for predicting pressure distributions. My growing interest in computational fluid dynamics led me to pursue coursework in CFD through the Advanced level, where I developed a 3-D high-order compressible flow solver in Fortran, first for DNS and subsequently extending it to RANS with the k–ω and novel k–ω′ turbulence models; the latter demonstrated improved numerical stability and accuracy on coarser grids.</p>
+  </section>
 
 <main class="wrap">
 
