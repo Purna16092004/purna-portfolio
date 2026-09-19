@@ -88,7 +88,7 @@
   .eyebrow{ font-family: var(--mono); font-size: 0.8rem; color: var(--accent-2); margin: 0 0 10px; }
   h1{ font-family: var(--serif); font-weight: 600; font-size: 2.6rem; line-height: 1.1; margin: 0 0 6px; }
   .role{ font-family: var(--serif); font-style: italic; font-weight: 500; font-size: 1.15rem; color: var(--ink-dim); margin: 0 0 4px; }
-.role + .role{ margin-bottom: 22px; }
+  .role + .role{ margin-bottom: 22px; }
   .lede{ font-size: 1.02rem; color: var(--ink-dim); max-width: 520px; }
   .lede strong{ color: var(--ink); font-weight: 600; }
 
@@ -102,7 +102,7 @@
   .photo-slot img{
     width: 100%; height: 100%; object-fit: cover; display: block;
   }
-  @media (max-width: 640px){ .photo-slot{ display:none; } .hero-lines{ width: 280px; right: -100px; } }
+  @media (max-width: 640px){ .photo-slot{ display:none; } .hero-content{ padding-right: 0; } .hero-lines{ width: 280px; right: -100px; } }
 
   .contact-row{ display:flex; gap: 18px; flex-wrap:wrap; justify-content: center; margin-top: 26px; font-size: 0.92rem; }
   .contact-row a{ color: var(--ink); border-bottom: 1px solid var(--line); padding-bottom: 1px; }
@@ -123,18 +123,15 @@
   .edu-item .yr{ font-family: var(--mono); font-size: 0.85rem; color: var(--ink-dim); text-align:right; white-space:nowrap; }
   .edu-item .grade{ font-family: var(--mono); font-size: 0.85rem; color: var(--accent-2); text-align:right; }
 
-  /* ---------- Research timeline ---------- */
-  .timeline{ position:relative; padding-left: 26px; }
-  .timeline::before{ content:""; position:absolute; left: 5px; top: 6px; bottom: 6px; width: 1px; background: var(--line); }
-  .t-item{ position: relative; padding-bottom: 34px; }
-  .t-item:last-child{ padding-bottom: 0; }
-  .t-item::before{
-    content:""; position:absolute; left: -26px; top: 5px; width: 9px; height: 9px;
-    border-radius:50%; background: var(--bg); border: 2px solid var(--accent);
-  }
+  /* ---------- Research experience (full width, no timeline line/dots) ---------- */
+  .timeline{ position:relative; }
+  .t-item{ padding: 20px 0; border-bottom: 1px dotted var(--line); }
+  .t-item:first-child{ padding-top: 0; }
+  .t-item:last-child{ border-bottom: none; padding-bottom: 0; }
   .t-date{ font-family: var(--mono); font-size: 0.8rem; color: var(--accent); margin-bottom: 4px; }
   .t-title{ font-family: var(--serif); font-weight:600; font-size: 1.12rem; margin: 0 0 2px; }
-  .t-meta{ font-size: 0.88rem; color: var(--ink-dim); margin-bottom: 10px; }
+  .t-meta{ font-size: 0.88rem; color: var(--ink-dim); }
+  .t-guide{ font-size: 0.88rem; color: var(--ink-dim); font-style: italic; margin-bottom: 10px; }
   .t-item ul{ margin: 0; padding-left: 18px; }
   .t-item li{ margin-bottom: 5px; font-size: 0.95rem; }
   .tags{ margin-top: 10px; display:flex; gap:10px; flex-wrap:wrap; }
@@ -144,14 +141,14 @@
   }
   .tag.filled{ border-style: solid; color: var(--accent-2); border-color: var(--accent-2); }
 
-  /* ---------- Publications ---------- */
+  /* ---------- Conference Publications ---------- */
   .pub{ padding: 16px 0; border-bottom: 1px dotted var(--line); }
   .pub:last-child{ border-bottom: none; }
-  .pub-title{ font-weight:600; margin-bottom: 4px; }
-  .pub-authors{ font-size: 0.92rem; color: var(--ink-dim); margin-bottom: 2px; }
-  .pub-authors .me{ color: var(--ink); font-weight:600; }
-  .pub-venue{ font-style: italic; font-size: 0.9rem; color: var(--ink-dim); }
-  .pub-status{ display:inline-block; margin-top: 6px; font-family: var(--mono); font-size: 0.74rem; color: var(--accent); }
+  .pub-title{ font-family: var(--serif); font-weight:600; font-size: 1.08rem; line-height: 1.4; margin-bottom: 6px; }
+  .pub-authors{ font-size: 0.92rem; color: var(--ink-dim); margin-bottom: 4px; }
+  .pub-authors .me{ color: var(--accent-2); font-weight:600; }
+  .pub-venue{ font-style: italic; font-size: 0.9rem; color: var(--accent); }
+  .pub-status{ display:inline-block; margin-top: 6px; font-family: var(--mono); font-size: 0.74rem; color: var(--ink-dim); }
 
   /* ---------- Projects ---------- */
   .proj{ padding: 16px 0; border-bottom: 1px dotted var(--line); }
@@ -237,12 +234,13 @@
       <div class="t-item">
         <div class="t-date">May 2026 — Present</div>
         <div class="t-title">Unsteadiness in Crossing Shockwave Boundary Layer Interaction</div>
-        <div class="t-meta">Master's Thesis · Gas Dynamics Laboratory, IIT Madras · Guide: Prof. R. Sriram</div>
+        <div class="t-meta">Master's Thesis · Gas Dynamics Laboratory, IIT Madras</div>
+        <div class="t-guide">Guide: Prof. R. Sriram</div>
         <ul>
-          <li>Investigating the governing mechanisms of unsteadiness in 3-D crossing shock wave boundary layer interactions.</li>
-          <li>Exploring hysteresis associated with the regular-to-Mach reflection transition.</li>
-          <li>Employing Schlieren, oil-flow visualisation, and unsteady pressure measurements in a supersonic wind tunnel.</li>
-          <li>Implemented Background-Oriented Schlieren (BOS) for an axisymmetric case; extending it to tomographic-BOS.</li>
+          <li>Investigating the governing mechanisms of unsteadiness in the 3-D crossing shock wave boundary layer interactions.</li>
+          <li>Exploring the possibility of hysteresis being associated with the transition from regular reflection to Mach reflection.</li>
+          <li>Employing Schlieren and oil-flow visualization &amp; unsteady pressure measurements, in a supersonic wind tunnel facility.</li>
+          <li>Implemented Background-Oriented Schlieren (BOS) for an axisymmetric case and are extending it to tomographic-BOS.</li>
         </ul>
         <div class="tags"><span class="tag">add report</span></div>
       </div>
@@ -250,11 +248,12 @@
       <div class="t-item">
         <div class="t-date">Aug 2025 — Apr 2026</div>
         <div class="t-title">Interaction of Moving Expansion Waves via Method of Characteristics</div>
-        <div class="t-meta">Undergraduate Research · Gas Dynamics Laboratory, IIT Madras · Guide: Prof. R. Sriram</div>
+        <div class="t-meta">Undergraduate Research · Gas Dynamics Laboratory, IIT Madras</div>
+        <div class="t-guide">Guide: Prof. R. Sriram</div>
         <ul>
-          <li>Developed a 1-D theoretical framework via the method of characteristics for expansion wave interactions.</li>
-          <li>Produced physically reasonable results for head-on interactions of two moving expansion fans.</li>
-          <li>Currently validating against an in-house compressible flow solver.</li>
+          <li>Applied the method of characteristics to develop a 1-D theoretical framework to solve expansion wave interactions.</li>
+          <li>The developed solver produced physically reasonable results for head-on interactions of two moving expansion fans.</li>
+          <li>Currently validating the results against an in-house compressible flow solver, to establish the framework's accuracy.</li>
         </ul>
         <div class="tags"><span class="tag filled">ISIS 2026 abstract</span><span class="tag">add report</span></div>
       </div>
@@ -262,11 +261,13 @@
       <div class="t-item">
         <div class="t-date">May — Jul 2025</div>
         <div class="t-title">Reduced Order Modelling of Acoustic Response of a Combustor</div>
-        <div class="t-meta">Research Internship · Thermal Physics Laboratory, Kyoto University · Guide: Prof. Kurose Ryoichi</div>
+        <div class="t-meta">Research Internship · Thermal Physics Laboratory, Kyoto University</div>
+        <div class="t-guide">Guide: Prof. Kurose Ryoichi</div>
         <ul>
-          <li>Selected for Kyoto University's Short Term Academic Research Program.</li>
-          <li>Investigated acoustic response and eigenfrequencies of a simplified combustor using COMSOL Multiphysics.</li>
-          <li>Built a reduced-order model via a Green's function approach; validated against simulation data.</li>
+          <li>Selected for Kyoto University's Short Term Academic Research Program; presented a poster on the results obtained.</li>
+          <li>Investigated the acoustic response and eigenfrequencies of a simplified combustor model using COMSOL Multiphysics.</li>
+          <li>Developed a reduced-order model via a Green's function approach to determine pressure distributions using eigenmodes.</li>
+          <li>Successfully validated the developed model against simulation data, predicting pressure distribution at any frequency.</li>
         </ul>
         <div class="tags"><span class="tag">add poster</span></div>
       </div>
@@ -274,22 +275,24 @@
       <div class="t-item">
         <div class="t-date">Nov 2024 — Apr 2025</div>
         <div class="t-title">Shock–Cavity Shear Layer Interaction with Gas Injection</div>
-        <div class="t-meta">Undergraduate Research · Gas Dynamics Laboratory, IIT Madras · Guide: Prof. R. Sriram</div>
+        <div class="t-meta">Undergraduate Research · Gas Dynamics Laboratory, IIT Madras</div>
+        <div class="t-guide">Guide: Prof. R. Sriram</div>
         <ul>
-          <li>Studied shock-cavity shear layer interaction over a tapered cavity with passive air-jet injection.</li>
-          <li>Performed POD of Schlieren images and power spectral density analysis of pressure data.</li>
-          <li>Observed absence of Rossiter modes, indicating suppression of the acoustic feedback loop.</li>
+          <li>Conducted experiments to study shock-cavity shear layer interaction over a tapered cavity, with passive air-jet injection.</li>
+          <li>Performed proper orthogonal decomposition of Schlieren images and power spectral density analysis of pressure data.</li>
+          <li>Observed an absence of Rossiter modes, indicating suppression of the acoustic feedback loop and resonant behaviour.</li>
         </ul>
-        <div class="tags"><span class="tag filled">ISSW35 paper</span></div>
+        <div class="tags"><span class="tag filled">ISSW35 paper</span><span class="tag">add report</span></div>
       </div>
 
       <div class="t-item">
         <div class="t-date">May — Jul 2024</div>
         <div class="t-title">Modelling of the Lifted Temperature Minimum Phenomenon</div>
-        <div class="t-meta">Research Internship · Fluid Mechanics Laboratory, JNCASR · Guide: Prof. K.R. Sreenivas</div>
+        <div class="t-meta">Research Internship · Fluid Mechanics Laboratory, JNCASR</div>
+        <div class="t-guide">Guide: Prof. K.R. Sreenivas</div>
         <ul>
-          <li>Awarded the summer research fellowship by JNCASR.</li>
-          <li>Modelled nocturnal boundary layer temperature profiles with aerosol heat transfer, reproducing the lifted minimum.</li>
+          <li>Awarded the summer research fellowship by Jawaharlal Nehru Institute for Advanced Scientific Research (JNCASR).</li>
+          <li>Modelled nocturnal boundary layer temperature profiles with aerosol heat transfer, demonstrating a lifted temperature minimum.</li>
         </ul>
         <div class="tags"><span class="tag">add report</span></div>
       </div>
@@ -298,7 +301,7 @@
   </section>
 
   <section id="publications">
-    <div class="section-head"><h2>Publications &amp; Presentations</h2></div>
+    <div class="section-head"><h2>Conference Publications</h2></div>
 
     <div class="pub">
       <div class="pub-title">Interaction of Moving Expansion Waves: A One-Dimensional Method of Characteristics Framework</div>
