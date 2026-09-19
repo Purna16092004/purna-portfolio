@@ -20,7 +20,9 @@
     --sans: "IBM Plex Sans", -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
     --mono: "IBM Plex Mono", "SF Mono", Consolas, monospace;
   }
-  .sec-text{ font-size: 1rem; color: var(--ink); max-width: 800px; }
+  .sec-text{ font-size: 1rem; color: var(--ink); text-align: justify; }
+  .sec-list{ margin: 0 0 16px; padding-left: 20px; font-size: 1rem; color: var(--ink); }
+  .sec-list li{ margin-bottom: 6px; }
   @media (prefers-color-scheme: dark){
     :root:not([data-theme="light"]){
       --bg: #10141B;
@@ -82,7 +84,7 @@
   .hero-lines{ position:absolute; top: 0; right: -60px; width: 420px; opacity: 0.55; pointer-events:none; }
   .hero-lines svg{ width:100%; height:auto; }
   .hero-lines path, .hero-lines line{ stroke: var(--accent-2); }
-  .hero-content{ position: relative; z-index: 2; max-width: 560px; }
+  .hero-content{ position: relative; z-index: 2; max-width: 560px; margin: 0 auto; text-align: center; }
   .eyebrow{ font-family: var(--mono); font-size: 0.8rem; color: var(--accent-2); margin: 0 0 10px; }
   h1{ font-family: var(--serif); font-weight: 600; font-size: 2.6rem; line-height: 1.1; margin: 0 0 6px; }
   .role{ font-family: var(--serif); font-style: italic; font-weight: 500; font-size: 1.15rem; color: var(--ink-dim); margin: 0 0 4px; }
@@ -91,7 +93,7 @@
   .lede strong{ color: var(--ink); font-weight: 600; }
 
   .photo-slot{
-    position:absolute; top: 40px; right: 0px;
+    position:absolute; top: 40px; right: 100px;
     width: 220px; height: 220px; border-radius: 50%;
     border: 1.5px solid var(--line);
     overflow: hidden;
@@ -102,7 +104,7 @@
   }
   @media (max-width: 640px){ .photo-slot{ display:none; } .hero-lines{ width: 280px; right: -100px; } }
 
-  .contact-row{ display:flex; gap: 18px; flex-wrap:wrap; margin-top: 26px; font-size: 0.92rem; }
+  .contact-row{ display:flex; gap: 18px; flex-wrap:wrap; justify-content: center; margin-top: 26px; font-size: 0.92rem; }
   .contact-row a{ color: var(--ink); border-bottom: 1px solid var(--line); padding-bottom: 1px; }
   .contact-row a:hover{ color: var(--accent); border-color: var(--accent); text-decoration: none; }
 
@@ -203,18 +205,31 @@
 <main class="wrap">
 
   <section id="interests">
-    <div class="section-head"><span class="section-num">01</span><h2>Research Interests</h2></div>
-    <p class="sec-text">My research interests lie in computational fluid dynamics, experimental high-speed aerodynamics, fluid mechanics, turbulence and flow instabilities, and nonlinear dynamics. I am particularly interested in understanding complex flow phenomena through a combination of high-fidelity computational methods, experiments, and reduced-order modelling.</p>
+    <div class="section-head"><h2>Research Interests</h2></div>
+    <p class="sec-text">My research interests lie in:</p>
+    <ul class="sec-list">
+      <li>Computational fluid dynamics</li>
+      <li>Experimental high-speed aerodynamics</li>
+      <li>Fluid mechanics</li>
+      <li>Turbulence and flow instabilities</li>
+      <li>Nonlinear dynamics</li>
+      <li>Data driver modelling</li>
+    </ul>
+    <p class="sec-text">I am particularly interested in understanding complex flow phenomena through a combination of high-fidelity computational methods, experiments, and data-driven modelling.</p>
   </section>
 
   <section id="overview">
-    <div class="section-head"><span class="section-num">02</span><h2>Overview</h2></div>
-    <p class="sec-text">I am a final-year Dual Degree student in Aerospace Engineering at IIT Madras, with research interests spanning experimental high-speed aerodynamics, computational methods, and theoretical fluid mechanics. At the <strong>Gas Dynamics Laboratory, IIT Madras</strong>, I have worked on shock–cavity interactions and shock wave–boundary layer interactions, alongside theoretical work using the method of characteristics to study expansion wave interactions. During my research internship at <strong>Kyoto University</strong>, I investigated combustor acoustics and developed a Green's-function-based reduced-order model for predicting pressure distributions. My growing interest in computational fluid dynamics led me to pursue coursework in <strong>CFD through the Advanced level</strong>, where I developed a 3-D high-order compressible flow solver in Fortran, first for DNS and subsequently extending it to RANS with the k–ω and novel k–ω<sub>0</sub> turbulence models; the latter demonstrated improved numerical stability and accuracy on coarser grids.</p>
+    <div class="section-head"><h2>Overview</h2></div>
+    <p class="sec-text">I am a final-year Dual Degree student in Aerospace Engineering at IIT Madras, with research interests spanning experimental high-speed aerodynamics, computational methods, and theoretical fluid mechanics. At the <strong>Gas Dynamics Laboratory, IIT Madras</strong>, I have worked on shock–cavity interactions and shock wave–boundary layer interactions, alongside theoretical work using the method of characteristics to study expansion wave interactions.</p>
+
+    <p class="sec-text">During my research internship at <strong>Kyoto University</strong>, I investigated combustor acoustics and developed a Green's-function-based reduced-order model for predicting pressure distributions.</p>
+
+    <p class="sec-text">My growing interest in computational fluid dynamics led me to pursue coursework in CFD through the Advanced level, where I developed a 3-D high-order compressible flow solver in Fortran, first for DNS and subsequently extending it to RANS with the k–ω and novel k–ω<sub>0</sub> turbulence models; the latter demonstrated improved numerical stability and accuracy on coarser grids.</p>
   </section>
 
 
   <section id="research">
-    <div class="section-head"><span class="section-num">02</span><h2>Research Experience</h2></div>
+    <div class="section-head"><h2>Research Experience</h2></div>
 
     <div class="timeline">
 
@@ -282,7 +297,7 @@
   </section>
 
   <section id="publications">
-    <div class="section-head"><span class="section-num">03</span><h2>Publications &amp; Presentations</h2></div>
+    <div class="section-head"><h2>Publications &amp; Presentations</h2></div>
 
     <div class="pub">
       <div class="pub-title">Interaction of Moving Expansion Waves: A One-Dimensional Method of Characteristics Framework</div>
@@ -300,7 +315,7 @@
   </section>
 
   <section id="projects">
-    <div class="section-head"><span class="section-num">04</span><h2>Projects</h2></div>
+    <div class="section-head"><h2>Projects</h2></div>
 
     <div class="proj">
       <div class="proj-head">
@@ -358,7 +373,7 @@
   </section>
 
   <section id="skills">
-    <div class="section-head"><span class="section-num">05</span><h2>Skills &amp; Coursework</h2></div>
+    <div class="section-head"><h2>Skills &amp; Coursework</h2></div>
     <dl class="skill-grid">
       <dt>Programming</dt><dd>C/C++, Python, MATLAB, FORTRAN90</dd>
       <dt>Software</dt><dd>Ansys Fluent, COMSOL Multiphysics, Fusion360, XFoil, XFLR5</dd>
