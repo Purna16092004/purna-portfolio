@@ -69,28 +69,16 @@
     border-bottom: 1px solid var(--line);
   }
   nav .wrap{ display:flex; align-items:center; justify-content:space-between; padding: 14px 24px; max-width: 760px; }
-  nav .brand{ font-family: var(--serif); font-weight:600; font-size: 1.05rem; }
   nav ul{ list-style:none; display:flex; flex-wrap:wrap; gap: 6px 20px; margin:0; padding:0; font-size: 0.92rem; }
   nav a{ color: var(--ink-dim); }
   nav a:hover{ color: var(--accent); text-decoration:none; }
-  .theme-toggle{
-    border:1px solid var(--line); background:transparent; color:var(--ink-dim);
-    border-radius: 4px; padding: 4px 9px; cursor:pointer; font-family: var(--sans); font-size: 0.85rem;
-  }
-  .theme-toggle:hover{ color: var(--accent); border-color: var(--accent); }
 
   /* ---------- Hero ---------- */
   .hero{ position: relative; padding: 40px 0 70px;}
-  .hero-lines{ position:absolute; top: 0; right: -60px; width: 420px; opacity: 0.55; pointer-events:none; }
-  .hero-lines svg{ width:100%; height:auto; }
-  .hero-lines path, .hero-lines line{ stroke: var(--accent-2); }
   .hero-content{ position: relative; z-index: 2; margin: 0; padding-right: 280px; text-align: center; }
-  .eyebrow{ font-family: var(--mono); font-size: 0.8rem; color: var(--accent-2); margin: 0 0 10px; }
   h1{ font-family: var(--serif); font-weight: 600; font-size: 2.6rem; line-height: 1.1; margin: 0 0 6px; }
   .role{ font-family: var(--serif); font-style: italic; font-weight: 500; font-size: 1.15rem; color: var(--ink-dim); margin: 0 0 4px; }
   .role + .role{ margin-bottom: 22px; }
-  .lede{ font-size: 1.02rem; color: var(--ink-dim); max-width: 520px; }
-  .lede strong{ color: var(--ink); font-weight: 600; }
 
   .photo-slot{
     position:absolute; top: 40px; right: 40px;
@@ -102,7 +90,7 @@
   .photo-slot img{
     width: 100%; height: 100%; object-fit: cover; display: block;
   }
-  @media (max-width: 640px){ .photo-slot{ display:none; } .hero-content{ padding-right: 0; } .hero-lines{ width: 280px; right: -100px; } }
+  @media (max-width: 640px){ .photo-slot{ display:none; } .hero-content{ padding-right: 0; } }
 
   .contact-row{ display:flex; gap: 18px; flex-wrap:wrap; justify-content: center; margin-top: 26px; font-size: 0.92rem; }
   .contact-row a{ color: var(--ink); border-bottom: 1px solid var(--line); padding-bottom: 1px; }
@@ -112,18 +100,9 @@
   section{ padding: 46px 0; border-top: 1px solid var(--line); }
   section:first-of-type{ border-top:none; }
   .section-head{ display:flex; align-items:baseline; gap: 14px; margin-bottom: 26px; }
-  .section-num{ font-family: var(--mono); font-size: 0.78rem; color: var(--accent); }
   h2{ font-family: var(--serif); font-weight:600; font-size: 1.5rem; margin: 0; }
 
-  /* ---------- Education ---------- */
-  .edu-item{ display:grid; grid-template-columns: 1fr auto; gap: 4px 16px; padding: 14px 0; border-bottom: 1px dotted var(--line); }
-  .edu-item:last-child{ border-bottom:none; }
-  .edu-item .inst{ font-weight:600; }
-  .edu-item .deg{ font-style: italic; color: var(--ink-dim); grid-column: 1; }
-  .edu-item .yr{ font-family: var(--mono); font-size: 0.85rem; color: var(--ink-dim); text-align:right; white-space:nowrap; }
-  .edu-item .grade{ font-family: var(--mono); font-size: 0.85rem; color: var(--accent-2); text-align:right; }
-
-  /* ---------- Research experience (full width, no timeline line/dots) ---------- */
+  /* ---------- Research experience ---------- */
   .timeline{ position:relative; }
   .t-item{ padding: 20px 0; border-bottom: 1px dotted var(--line); }
   .t-item:first-child{ padding-top: 0; }
@@ -134,12 +113,15 @@
   .t-guide{ font-size: 0.88rem; color: var(--ink-dim); font-style: italic; margin-bottom: 10px; }
   .t-item ul{ margin: 0; padding-left: 18px; }
   .t-item li{ margin-bottom: 5px; font-size: 0.95rem; }
+
+  /* ---------- Report / poster links ---------- */
   .tags{ margin-top: 10px; display:flex; gap:10px; flex-wrap:wrap; }
   .tag{
     font-family: var(--mono); font-size: 0.74rem; color: var(--ink-dim);
     border: 1px dashed var(--line); border-radius: 3px; padding: 3px 8px;
   }
   .tag.filled{ border-style: solid; color: var(--accent-2); border-color: var(--accent-2); }
+  .tag.filled:hover{ color: var(--accent); border-color: var(--accent); text-decoration: none; }
 
   /* ---------- Conference Publications ---------- */
   .pub{ padding: 16px 0; border-bottom: 1px dotted var(--line); }
@@ -151,22 +133,18 @@
   .pub-status{ display:inline-block; margin-top: 6px; font-family: var(--mono); font-size: 0.74rem; color: var(--ink-dim); }
 
   /* ---------- Projects ---------- */
-  .proj{ padding: 16px 0; border-bottom: 1px dotted var(--line); }
-  .proj:last-child{ border-bottom:none; }
+  .proj{ padding: 18px 0; border-bottom: 1px dotted var(--line); }
+  .proj:first-of-type{ padding-top: 0; }
+  .proj:last-child{ border-bottom:none; padding-bottom: 0; }
   .proj-head{ display:flex; justify-content:space-between; align-items:baseline; gap:12px; flex-wrap:wrap; }
   .proj-title{ font-weight:600; }
   .proj-date{ font-family: var(--mono); font-size: 0.8rem; color: var(--ink-dim); white-space:nowrap; }
   .proj-context{ font-style:italic; color: var(--ink-dim); font-size: 0.9rem; margin: 2px 0 8px; }
-  .proj p.desc{ margin: 0; font-size: 0.95rem; }
+  .proj ul{ margin: 0; padding-left: 18px; }
+  .proj li{ margin-bottom: 5px; font-size: 0.95rem; }
 
-  /* ---------- Skills ---------- */
-  .skill-grid{ display:grid; grid-template-columns: 180px 1fr; gap: 10px 20px; font-size: 0.94rem; }
-  .skill-grid dt{ color: var(--ink-dim); font-family: var(--mono); font-size: 0.82rem; padding-top:2px; }
-  .skill-grid dd{ margin:0; }
-  @media (max-width: 560px){ .skill-grid{ grid-template-columns: 1fr; } .skill-grid dt{ margin-top: 10px; } }
-
-  footer{ padding: 40px 0 60px; text-align:center; color: var(--ink-dim); font-size: 0.85rem; }
-  footer a{ color: var(--ink-dim); }
+  /* ---------- Contact ---------- */
+  #contact{ padding-bottom: 90px; }
 </style>
 </head>
 <body>
@@ -174,13 +152,12 @@
 <nav>
   <div class="wrap">
     <ul>
-  <li><a href="#overview">Overview</a></li>
-  <li><a href="#research">Research Experience</a></li>
-  <li><a href="#publications">Publications</a></li>
-  <li><a href="#projects">Projects</a></li>
-  <li><a href="#contact">Contact Me</a></li>
-  </ul>
-   
+      <li><a href="#overview">Overview</a></li>
+      <li><a href="#research">Research Experience</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact Me</a></li>
+    </ul>
   </div>
 </nav>
 
@@ -190,7 +167,7 @@
 
   <div class="hero-content">
     <h1>Purna Ananthkrishnan</h1>
-    <p class="role">Final Year Dual Degree (B.Tech & M.Tech) Student,</p>
+    <p class="role">Final Year Dual Degree (B.Tech &amp; M.Tech) Student,</p>
     <p class="role">Department of Aerospace Engineering, IIT Madras, India</p>
     <div class="contact-row">
       <a href="mailto:ae22b003@smail.iitm.ac.in">Email</a>
@@ -211,7 +188,7 @@
       <li>Theoretical fluid mechanics</li>
       <li>Turbulence and flow instabilities</li>
       <li>Nonlinear dynamics</li>
-      <li>Data driver modelling</li>
+      <li>Data driven modelling</li>
     </ul>
     <p class="sec-text">I am particularly interested in understanding complex flow phenomena through a combination of high-fidelity computational methods, experiments, and data-driven modelling.</p>
   </section>
@@ -242,7 +219,9 @@
           <li>Employing Schlieren and oil-flow visualization &amp; unsteady pressure measurements, in a supersonic wind tunnel facility.</li>
           <li>Implemented Background-Oriented Schlieren (BOS) for an axisymmetric case and are extending it to tomographic-BOS.</li>
         </ul>
-        <div class="tags"><span class="tag">add report</span></div>
+        <div class="tags">
+          <a class="tag filled" href="ae22b003_ddp_review1.pptx.pdf" target="_blank" rel="noopener">Review 1</a>
+        </div>
       </div>
 
       <div class="t-item">
@@ -255,7 +234,9 @@
           <li>The developed solver produced physically reasonable results for head-on interactions of two moving expansion fans.</li>
           <li>Currently validating the results against an in-house compressible flow solver, to establish the framework's accuracy.</li>
         </ul>
-        <div class="tags"><span class="tag filled">ISIS 2026 abstract</span><span class="tag">add report</span></div>
+        <div class="tags">
+          <a class="tag filled" href="AE22B003_AS4545_Report%20(1).pdf" target="_blank" rel="noopener">Report</a>
+        </div>
       </div>
 
       <div class="t-item">
@@ -269,7 +250,9 @@
           <li>Developed a reduced-order model via a Green's function approach to determine pressure distributions using eigenmodes.</li>
           <li>Successfully validated the developed model against simulation data, predicting pressure distribution at any frequency.</li>
         </ul>
-        <div class="tags"><span class="tag">add poster</span></div>
+        <div class="tags">
+          <a class="tag filled" href="kyoto_poster.pdf" target="_blank" rel="noopener">Poster</a>
+        </div>
       </div>
 
       <div class="t-item">
@@ -282,7 +265,6 @@
           <li>Performed proper orthogonal decomposition of Schlieren images and power spectral density analysis of pressure data.</li>
           <li>Observed an absence of Rossiter modes, indicating suppression of the acoustic feedback loop and resonant behaviour.</li>
         </ul>
-        <div class="tags"><span class="tag filled">ISSW35 paper</span><span class="tag">add report</span></div>
       </div>
 
       <div class="t-item">
@@ -294,7 +276,9 @@
           <li>Awarded the summer research fellowship by Jawaharlal Nehru Institute for Advanced Scientific Research (JNCASR).</li>
           <li>Modelled nocturnal boundary layer temperature profiles with aerosol heat transfer, demonstrating a lifted temperature minimum.</li>
         </ul>
-        <div class="tags"><span class="tag">add report</span></div>
+        <div class="tags">
+          <a class="tag filled" href="SRFP_Report_Final.pdf" target="_blank" rel="noopener">Report</a>
+        </div>
       </div>
 
     </div>
@@ -324,57 +308,74 @@
     <div class="proj">
       <div class="proj-head">
         <span class="proj-title">High-Order 3-D Multiblock Compressible Flow Solver in Fortran</span>
-        <span class="proj-date">Jan — May 2026</span>
+        <span class="proj-date">Jan 2026 — May 2026</span>
       </div>
       <div class="proj-context">Course Project, Advanced Computational Fluid Dynamics</div>
-      <p class="desc">Built a 3-D compressible flow solver with high-order finite-difference schemes; validated against DNS benchmarks and NASA's CFL3D, and implemented the novel k–ω′ turbulence model.</p>
+      <ul>
+        <li>Developed a 3-D compressible flow solver in Fortran90, with high-order compact &amp; explicit finite-difference schemes</li>
+        <li>Validated the DNS solver against canonical benchmarks cases – Taylor-Green Vortex and inviscid vortex convection</li>
+        <li>Incorporated RANS with k–ω and the novel k–ω<sub>0</sub> turbulence model to simulate the viscous flow over a flat-plate.</li>
+        <li>Demonstrated significant improvement in numerical stability, better accuracy on coarser grids for the k–ω<sub>0</sub> model.</li>
+      </ul>
+      <div class="tags">
+        <a class="tag filled" href="AS6041_Assignment1%20(1)_compressed.pdf" target="_blank" rel="noopener">Report 1</a>
+        <a class="tag filled" href="acfd_report2.pdf" target="_blank" rel="noopener">Report 2</a>
+      </div>
     </div>
 
     <div class="proj">
       <div class="proj-head">
         <span class="proj-title">Explicit Euler Solvers for Incompressible &amp; Compressible Flow Past a Bump</span>
-        <span class="proj-date">Jul — Nov 2025</span>
+        <span class="proj-date">Jul 2025 — Nov 2025</span>
       </div>
       <div class="proj-context">Course Project, Computational Aerodynamics</div>
-      <p class="desc">Developed finite-volume Euler solvers in MATLAB — artificial compressibility for incompressible flow, and Roe/Van Leer/AUSM schemes for compressible flow across Mach 0.4–1.4.</p>
+      <ul>
+        <li>Developed an explicit finite-volume incompressible Euler solver using the artificial compressibility method in MATLAB</li>
+        <li>Extended the solver to compressible flow, implementing Roe, Van Leer, and AUSM schemes for interface flux evaluation</li>
+        <li>Simulated the flow over a bump and verified the accuracy of the solver across a range of Mach numbers from 0.4-1.4</li>
+      </ul>
+      <div class="tags">
+        <a class="tag filled" href="AS5330_Group_03_Project_1.pdf" target="_blank" rel="noopener">Report 1</a>
+        <a class="tag filled" href="AS5330_Group_03_Project_2.pdf" target="_blank" rel="noopener">Report 2</a>
+      </div>
     </div>
 
     <div class="proj">
       <div class="proj-head">
         <span class="proj-title">Fixed-Wing UAV for Long-Range Maritime Surveillance</span>
-        <span class="proj-date">Jul — Nov 2025</span>
+        <span class="proj-date">Jul 2025 — Nov 2025</span>
       </div>
       <div class="proj-context">Course Project, Design and Fabrication of UAV/MAVs</div>
-      <p class="desc">Designed and fabricated a 2 m wingspan, 8 kg MTOW fixed-wing UAV; performed aerodynamic, structural, and stability analysis to validate the design.</p>
+      <ul>
+        <li>Designed and fabricated a fixed-wing UAV with a 2 m wingspan and 8 kg MTOW for long-range maritime surveillance</li>
+        <li>Performed a thorough aerodynamic, structural, and stability analysis to validate the design for the mission requirements.</li>
+        <li>Fabricated the UAV airframe with all structural elements, primarily using aluminium sheets and 3-D printed components</li>
+      </ul>
     </div>
 
     <div class="proj">
       <div class="proj-head">
         <span class="proj-title">Coupling of Structure &amp; Wake Oscillators in Vortex-Induced Vibrations</span>
-        <span class="proj-date">Jan — May 2025</span>
+        <span class="proj-date">Jan 2025 — May 2025</span>
       </div>
       <div class="proj-context">Course Project, Nonlinear Dynamics</div>
-      <p class="desc">Modelled the coupled structure-wake oscillator system of Facchinetti et al. (2004); validated hysteretic behaviour and extended the model to nonlinear coupling.</p>
+      <ul>
+        <li>Modelled the coupled structure-wake oscillator system from Facchinetti et al. (2004) to study vortex-induced vibrations.</li>
+        <li>Validated the model's predictions of hysteretic behaviour and extended the model to incorporate nonlinear coupling.</li>
+      </ul>
+      <div class="tags">
+        <a class="tag filled" href="AE22B003_AM5650_CourseProject.pdf" target="_blank" rel="noopener">Report</a>
+      </div>
     </div>
 
   </section>
 
-  <section id="skills">
-    <div class="section-head"><h2>Skills &amp; Coursework</h2></div>
-    <dl class="skill-grid">
-      <dt>Programming</dt><dd>C/C++, Python, MATLAB, FORTRAN90</dd>
-      <dt>Software</dt><dd>Ansys Fluent, COMSOL Multiphysics, Fusion360, XFoil, XFLR5</dd>
-      <dt>Experimental</dt><dd>Schlieren &amp; shadowgraph imaging, oil-flow visualisation, background-oriented Schlieren</dd>
-      <dt>Coursework</dt><dd>Aerodynamics, Gas Dynamics, Propulsion, Boundary Layer Theory, Advanced &amp; Computational CFD, Nonlinear Dynamics</dd>
-    </dl>
+  <section id="contact">
+    <div class="section-head"><h2>Contact Me</h2></div>
+    <p class="sec-text">I am currently seeking PhD positions and would be grateful for the opportunity to discuss prospective openings and research collaborations. Faculty members and research groups whose work aligns with my interests are most cordially invited to write to me at <a href="mailto:ae22b003@smail.iitm.ac.in">ae22b003@smail.iitm.ac.in</a>. I would be glad to furnish any additional information on request.</p>
   </section>
 
 </main>
-
-<footer id="contact" class="wrap">
-  <p>ae22b003@smail.iitm.ac.in · <a href="https://www.linkedin.com/in/xxxxxxxxxx" target="_blank" rel="noopener">LinkedIn</a></p>
-  <p>Indian Institute of Technology Madras</p>
-</footer>
 
 </body>
 </html>
